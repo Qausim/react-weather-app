@@ -3,7 +3,45 @@
   padding: 0;
 }
 
-h2 {
-  font-family: cursive;
-  text-align: center;
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.base > .background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  top: 0;
+}
+
+.base > div.background {
+  background: #888888bb;
+  z-index: -1;
+}
+
+.base > .background.big-pic {
+  display: none;
+}
+
+.base > .background.small-pic {
+  display: block;
+}
+
+.titlecase {
+  text-transform: capitalize;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .base > .background.small-pic {
+    display: none;
+  }
+
+  .base > .background.big-pic {
+    display: block;
+  }
 }
