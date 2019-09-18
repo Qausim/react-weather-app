@@ -4,6 +4,7 @@ import '../styles/app.css';
 import BigWeatherPic from '../assets/weather-big.jpeg';
 import SmallWeatherPic from '../assets/weather-small.jpeg';
 import SearchBar from './SearchBar';
+import AppBar from './AppBar';
 
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
     <img src={ BigWeatherPic } alt="Big weather background" className="big-pic background" />
     <img src={ SmallWeatherPic } alt="Big weather background" className="small-pic background" />
     <div className="background" />
+    <AppBar />
     <SearchBar />
   </div>
 );
