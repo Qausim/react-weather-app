@@ -1,0 +1,9 @@
+.location-wrapper {
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.location-wrapper .location {
+  text-align: center;
+  font-size: 3em;
+}
