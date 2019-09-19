@@ -5,6 +5,8 @@ import BigWeatherPic from '../assets/weather-big.jpeg';
 import SmallWeatherPic from '../assets/weather-small.jpeg';
 import SearchBar from './SearchBar';
 import AppBar from './AppBar';
+import WeatherDetails from './WeatherDetails';
+import Location from './Location';
 
 
 const App = () => (
@@ -14,6 +16,8 @@ const App = () => (
     <div className="background" />
     <AppBar />
     <SearchBar />
+    <Location />
+    <WeatherDetails />
   </div>
 );
 
