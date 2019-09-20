@@ -7,6 +7,7 @@ import SearchBar from './SearchBar';
 import AppBar from './AppBar';
 import WeatherDetails from './WeatherDetails';
 import Location from './Location';
+import HourlyDetails from './HourlyDetails';
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
     <SearchBar />
     <Location />
     <WeatherDetails />
+    <HourlyDetails />
   </div>
 );
 

@@ -1,0 +1,10 @@
+.hourly-details-wrapper {
+  display: flex;
+  overflow: auto;
+  margin: 0 auto;
+  margin-top: 80px;
+  height: 160px;
+  overflow: auto;
+  width: 70%;
+  box-sizing: border-box;
+}
