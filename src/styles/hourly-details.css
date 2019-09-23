@@ -4,7 +4,29 @@
   margin: 0 auto;
   margin-top: 80px;
   height: 160px;
-  overflow: auto;
-  width: 70%;
-  box-sizing: border-box;
+  width: 90%;
+}
+
+.hourly-details-wrapper .hourly-item-wrapper:not(:first-child) {
+  border-left: #aaa solid 1px;
+}
+
+.hourly-details-wrapper .hourly-item-wrapper:not(:last-child) {
+  border-right: #aaa solid 1px;
+}
+
+.hourly-details-wrapper::-webkit-scrollbar,
+.hourly-details-wrapper::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.hourly-details-wrapper::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .hourly-details-wrapper {
+    width: 80%;
+  }
 }

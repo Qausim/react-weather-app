@@ -25,9 +25,17 @@
   height: 100%;
 }
 
-.weather-details .summary-wrapper span {
+.weather-details .summary-wrapper p span:first-child::after {
+  content: ' ';
+}
+
+.weather-details .summary-wrapper {
   font-size: 1.5em;
   line-height: 1.4em;
+}
+
+.humidity::after {
+  content: '%';
 }
 
 @media screen and (min-width: 768px) {
@@ -36,7 +44,7 @@
     justify-content: space-around;
     width: 50%;
     align-items: center;
-    min-width: 700px;
+    min-width: 800px;
   }
 
   .weather-details .summary-wrapper {
