@@ -1,13 +1,18 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { connect } from 'react-redux';
 
 import HourlyItem from './HourlyItem';
 import '../styles/hourly-details.css';
 
-const HourlyDetails = () => {
-  const hourly = new Array(14).fill(0).map((el, ind) => ind + 1);
-  const hourlyList = [];
-  hourly.forEach((el) => hourlyList.push(<HourlyItem key={ el } />));
-
+const HourlyDetails = (props) => {
+  const { weatherData } = props;
+  let hourlyList = '';
+  if (weatherData) {
+    const { hourly: { data: hourly } } = weatherData;
+    hourlyList = hourly.map((el) => <HourlyItem data={ el } key={ el.time } />);
+  }
+  console.log(hourlyList);
   return (
     <div className="hourly-details-wrapper">
       { hourlyList }
@@ -15,4 +20,6 @@ const HourlyDetails = () => {
   );
 };
 
-export default HourlyDetails;
+const mapStateToProps = (state, ownProps) => ({ ...state, ...ownProps });
+
+export default connect(mapStateToProps)(HourlyDetails);

@@ -26,10 +26,3 @@
 .hourly-item-wrapper .hourly-weather-details p:first-child {
   margin-bottom: 10px;
 }
-
-@media screen and (min-width: 768px) {
-  .hourly-item-wrapper {
-    width: 80px;
-    min-width: unset;
-  }
-}

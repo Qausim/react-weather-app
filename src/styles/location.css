@@ -3,7 +3,20 @@
   margin-bottom: 40px;
 }
 
-.location-wrapper .location {
+.location-wrapper .location,
+.location-wrapper .nolocation {
   text-align: center;
-  font-size: 3em;
+}
+
+.location-wrapper .location {
+  font-size: 2em;
+}
+
+.location-wrapper .location span::before {
+  content: ' ';
+}
+
+.location-wrapper .nolocation {
+  font-size: 1.5em;
+  line-height: 1.4em;
 }
