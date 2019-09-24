@@ -26,8 +26,7 @@ const WeatherDetails = (props) => {
         </div>
         <div className="summary-wrapper">
           <p className="summary">
-            <span>Summary:</span>
-            <span>{ currently.summary }</span>
+            { currently.summary }
           </p>
           <p className="humidity">
             <span>Humidity:</span>
