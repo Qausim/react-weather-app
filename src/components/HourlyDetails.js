@@ -8,11 +8,12 @@ import '../styles/hourly-details.css';
 const HourlyDetails = (props) => {
   const { weatherData } = props;
   let hourlyList = '';
+
   if (weatherData) {
     const { hourly: { data: hourly } } = weatherData;
     hourlyList = hourly.map((el) => <HourlyItem data={ el } key={ el.time } />);
   }
-  console.log(hourlyList);
+
   return (
     <div className="hourly-details-wrapper">
       { hourlyList }

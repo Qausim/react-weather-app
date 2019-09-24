@@ -9,10 +9,7 @@ const Location = (props) => {
   const { location } = props;
   const locationTemplate = (
     <p className="location">
-      Location:
-      <span>
-        { location }
-      </span>
+      { location }
     </p>
   );
   const noLocationTemplate = <p className="nolocation">Enter a search location up above</p>;

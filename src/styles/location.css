@@ -12,10 +12,6 @@
   font-size: 2em;
 }
 
-.location-wrapper .location span::before {
-  content: ' ';
-}
-
 .location-wrapper .nolocation {
   font-size: 1.5em;
   line-height: 1.4em;

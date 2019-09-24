@@ -25,10 +25,6 @@
   height: 100%;
 }
 
-.weather-details .summary-wrapper p span:first-child::after {
-  content: ' ';
-}
-
 .weather-details .summary-wrapper {
   font-size: 1.5em;
   line-height: 1.4em;

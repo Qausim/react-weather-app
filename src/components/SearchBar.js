@@ -4,8 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import '../styles/search-bar.css';
-import setWeatherData from '../actions/setWeatherData';
-import setLocation from '../actions/setLocation';
+import setLocationAndWeatherData from '../actions/setLocationAndWeatherData';
 
 class SearchBar extends Component {
   constructor() {
@@ -18,20 +17,9 @@ class SearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { location } = this.state;
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${location}&key=d37f2c2cdcf64ab9a7e1f4c5536e8745`)
-      .then((res) => res.json())
-      .then(({ results: [data] }) => {
-        const { formatted, geometry: { lat, lng } } = data;
-        const cleaned = formatted.replace(/[\s]*\d+/g, '');
-        this.props.setLocation(cleaned);
-        return fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/a092f224abf5f47ae470dce7d24bebea/${lat},${lng}`);
-      })
-      .then((res) => res.json())
-      .then(({ currently, hourly }) => {
-        this.props.setWeatherData({ currently, hourly });
-        this.setState({ location: '' });
-      })
-      .catch((error) => console.log(error));
+    // the second argument clears the state of this component, and by extension the
+    // input field
+    this.props.setLocationAndWeatherData(location, () => this.setState({ location: '' }));
   }
 
   render() {
@@ -50,11 +38,12 @@ class SearchBar extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({ ...state, ...ownProps });
+const mapStateToProps = (state, ownProps) => ({ ...ownProps });
 
 const mapDispatchToProps = (dispatch) => ({
-  setWeatherData(weatherData) { dispatch(setWeatherData(weatherData)); },
-  setLocation(location) { dispatch(setLocation(location)); },
+  setLocationAndWeatherData(location, clearLocation) {
+    dispatch(setLocationAndWeatherData(location, clearLocation));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
