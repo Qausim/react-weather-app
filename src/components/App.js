@@ -8,6 +8,7 @@ import AppBar from './AppBar';
 import WeatherDetails from './WeatherDetails';
 import Location from './Location';
 import HourlyDetails from './HourlyDetails';
+import LoadingIndicator from './LoadingIndicator';
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
     <Location />
     <WeatherDetails />
     <HourlyDetails />
+    <LoadingIndicator />
   </div>
 );
 

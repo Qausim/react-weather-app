@@ -35,7 +35,13 @@ const WeatherDetails = (props) => {
         </div>
       </div>
     )
-    : <div className="weather-details"><p>No data received yet</p></div>;
+    : (
+      <div className="weather-details">
+        <p>
+          { props.error ? props.error : 'No data received yet' }
+        </p>
+      </div>
+    );
   return template;
 };
 
