@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import '../styles/search-bar.css';
-import setLocationAndWeatherData from '../actions/setLocationAndWeatherData';
+import setLocationAndWeatherData from '../store/middlewares/setLocationAndWeatherData';
 
 class SearchBar extends Component {
   constructor() {

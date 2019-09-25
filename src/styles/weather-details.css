@@ -23,11 +23,17 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-}
-
-.weather-details .summary-wrapper {
   font-size: 1.5em;
   line-height: 1.4em;
+}
+
+.weather-details > p {
+  text-align: center;
+  padding: 0 24px;
+}
+
+.weather-details .humidity span:first-child::after {
+  content: ' ';
 }
 
 .humidity::after {
